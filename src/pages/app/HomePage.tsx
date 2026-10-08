@@ -130,27 +130,38 @@ export default function HomePage() {
       </section>
 
       {/* Quick Spiritual Devotions Bar */}
-      <section className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+      <section className="grid grid-cols-2 sm:grid-cols-5 gap-3">
         <Link
-          to={ROUTES.PRAYERS}
+          to={ROUTES.HOURS_CLOCK}
           className="flex flex-col items-center justify-center p-3 rounded-card bg-ivory-100 hover:bg-gold/15 border border-ivory-200 transition-all text-center group"
         >
           <div className="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center text-gold-dark mb-1.5 group-hover:scale-105 transition-transform">
             <Sun className="w-5 h-5" />
           </div>
-          <span className="text-xs font-semibold text-graphite-800">Ângelus</span>
-          <span className="text-[10px] text-graphite-400">12:00 e 18:00</span>
+          <span className="text-xs font-semibold text-graphite-800">Horas / Ângelus</span>
+          <span className="text-[10px] text-graphite-400">Liturgia Diária</span>
         </Link>
 
         <Link
-          to={ROUTES.PRAYERS}
+          to={ROUTES.ROSARY}
           className="flex flex-col items-center justify-center p-3 rounded-card bg-ivory-100 hover:bg-gold/15 border border-ivory-200 transition-all text-center group"
         >
           <div className="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center text-gold-dark mb-1.5 group-hover:scale-105 transition-transform">
             <BookMarked className="w-5 h-5" />
           </div>
           <span className="text-xs font-semibold text-graphite-800">Santo Terço</span>
-          <span className="text-[10px] text-graphite-400">Mistérios do Dia</span>
+          <span className="text-[10px] text-graphite-400">Contas Interativas</span>
+        </Link>
+
+        <Link
+          to={ROUTES.EXAMINATION}
+          className="flex flex-col items-center justify-center p-3 rounded-card bg-ivory-100 hover:bg-gold/15 border border-ivory-200 transition-all text-center group"
+        >
+          <div className="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center text-gold-dark mb-1.5 group-hover:scale-105 transition-transform">
+            <Moon className="w-5 h-5" />
+          </div>
+          <span className="text-xs font-semibold text-graphite-800">Exame da Noite</span>
+          <span className="text-[10px] text-graphite-400">5 Passos Sagrados</span>
         </Link>
 
         <Link

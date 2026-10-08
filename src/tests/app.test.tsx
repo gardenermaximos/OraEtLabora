@@ -65,4 +65,18 @@ describe('Ora et Labora - Core Unit Tests', () => {
     const btn = screen.getByRole('button', { name: /ora et labora/i })
     expect(btn).toBeDefined()
   })
+
+  it('contains all 4 mystery groups of the Holy Rosary with 5 mysteries each', () => {
+    import('@/data/rosaryData').then(({ ROSARY_GROUPS }) => {
+      expect(ROSARY_GROUPS.length).toBe(4)
+      ROSARY_GROUPS.forEach((group) => {
+        expect(group.mysteries.length).toBe(5)
+        expect(group.name).toBeDefined()
+        group.mysteries.forEach((m) => {
+          expect(m.title).toBeDefined()
+          expect(m.scripture).toBeDefined()
+        })
+      })
+    })
+  })
 })

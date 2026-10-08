@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
   Search,
@@ -7,12 +8,14 @@ import {
   Copy,
   ChevronDown,
   Heart,
+  ExternalLink,
 } from 'lucide-react'
 
 import { PRAYERS, type PrayerItem } from '@/data/prayersData'
 import { Button } from '@/components/ui/Button'
 import { usePlayerStore } from '@/store/usePlayerStore'
 import { useToastStore } from '@/store/useToastStore'
+import { ROUTES, buildPath } from '@/constants/routes'
 
 type CategoryFilter = 'all' | 'daily' | 'marian' | 'saints' | 'rosary' | 'liturgical'
 type ViewMode = 'bilingual' | 'pt' | 'la'
@@ -324,19 +327,29 @@ export default function PrayersPage() {
                           </Button>
                         </div>
 
-                        <Button
-                          size="sm"
-                          leftIcon={<Volume2 className="w-3.5 h-3.5" />}
-                          onClick={() => {
-                            play(prayer.id, viewMode === 'la' ? 'la' : 'pt')
-                            addToast({
-                              message: `Ouvindo ${prayer.title} em áudio sacro.`,
-                              variant: 'info',
-                            })
-                          }}
-                        >
-                          Rezar com Áudio
-                        </Button>
+                        <div className="flex items-center gap-2">
+                          <Link
+                            to={buildPath(ROUTES.PRAYER_DETAIL, { id: prayer.id })}
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-pill bg-ivory-200/80 text-graphite-800 hover:bg-ivory-200 transition-colors"
+                          >
+                            <ExternalLink className="w-3.5 h-3.5" />
+                            <span>Tela Inteira</span>
+                          </Link>
+
+                          <Button
+                            size="sm"
+                            leftIcon={<Volume2 className="w-3.5 h-3.5" />}
+                            onClick={() => {
+                              play(prayer.id, viewMode === 'la' ? 'la' : 'pt')
+                              addToast({
+                                message: `Ouvindo ${prayer.title} em áudio sacro.`,
+                                variant: 'info',
+                              })
+                            }}
+                          >
+                            Rezar com Áudio
+                          </Button>
+                        </div>
                       </div>
                     </motion.div>
                   )}

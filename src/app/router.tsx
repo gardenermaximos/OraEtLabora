@@ -8,6 +8,10 @@ import { PageSkeleton } from '@/components/ui/Skeleton'
 // Lazy-loaded pages
 const HomePage = lazy(() => import('@/pages/app/HomePage'))
 const PrayersPage = lazy(() => import('@/pages/app/PrayersPage'))
+const PrayerDetailPage = lazy(() => import('@/pages/app/PrayerDetailPage'))
+const RosaryPage = lazy(() => import('@/pages/app/RosaryPage'))
+const HoursClockPage = lazy(() => import('@/pages/app/HoursClockPage'))
+const ExaminationPage = lazy(() => import('@/pages/app/ExaminationPage'))
 const DiscoverPage = lazy(() => import('@/pages/app/DiscoverPage'))
 const AssistantPage = lazy(() => import('@/pages/app/AssistantPage'))
 const CommunityPage = lazy(() => import('@/pages/app/CommunityPage'))
@@ -40,6 +44,38 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<PageSkeleton />}>
             <PrayersPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: ROUTES.PRAYER_DETAIL,
+        element: (
+          <Suspense fallback={<PageSkeleton />}>
+            <PrayerDetailPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: ROUTES.ROSARY,
+        element: (
+          <Suspense fallback={<PageSkeleton />}>
+            <RosaryPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: ROUTES.HOURS_CLOCK,
+        element: (
+          <Suspense fallback={<PageSkeleton />}>
+            <HoursClockPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: ROUTES.EXAMINATION,
+        element: (
+          <Suspense fallback={<PageSkeleton />}>
+            <ExaminationPage />
           </Suspense>
         ),
       },
