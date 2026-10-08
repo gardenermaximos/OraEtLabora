@@ -6,7 +6,11 @@ import { useReducedMotion } from '@/hooks/useReducedMotion'
 export type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'danger'
 export type ButtonSize = 'sm' | 'md' | 'lg'
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps
+  extends Omit<
+    ButtonHTMLAttributes<HTMLButtonElement>,
+    'onAnimationStart' | 'onDrag' | 'onDragStart' | 'onDragEnd'
+  > {
   variant?: ButtonVariant
   size?: ButtonSize
   isLoading?: boolean

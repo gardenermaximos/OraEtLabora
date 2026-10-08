@@ -1,4 +1,4 @@
-import type { InputHTMLAttributes } from 'react'
+import { useId, type InputHTMLAttributes } from 'react'
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string
@@ -14,7 +14,8 @@ export function Input({
   className = '',
   ...props
 }: InputProps) {
-  const inputId = id ?? `input-${Math.random().toString(36).slice(2, 7)}`
+  const generatedId = useId()
+  const inputId = id ?? generatedId
   const errorId = error ? `${inputId}-error` : undefined
 
   return (
