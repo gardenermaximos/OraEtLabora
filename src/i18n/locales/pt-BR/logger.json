@@ -1,0 +1,32 @@
+{
+  "title": "Meu Dia",
+  "sections": {
+    "morning": "Manhã",
+    "afternoon": "Tarde",
+    "evening": "Noite"
+  },
+  "categories": {
+    "spiritual": "Espiritual",
+    "daily": "Diária"
+  },
+  "actions": {
+    "addActivity": "Adicionar atividade",
+    "markDone": "Marcar como feito",
+    "quickAdd": "Adicionar rápido"
+  },
+  "streak": {
+    "label": "Chama",
+    "days": "{{count}} dia",
+    "days_plural": "{{count}} dias",
+    "grace": "Dia de graça disponível",
+    "graces": "{{count}} dias de graça"
+  },
+  "history": {
+    "title": "Histórico",
+    "weekly": "Semana",
+    "monthly": "Mês"
+  },
+  "empty": {
+    "day": "Seu dia está vazio. Que tal adicionar uma oração?"
+  }
+}

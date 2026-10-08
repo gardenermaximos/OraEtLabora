@@ -1,0 +1,33 @@
+{
+  "title": "Catálogo de Orações",
+  "search": "Buscar orações...",
+  "filterBy": "Filtrar por",
+  "categories": {
+    "all": "Todas",
+    "marian": "Marianas",
+    "eucharistic": "Eucarísticas",
+    "saints": "Santos",
+    "daily": "Diárias",
+    "rosary": "Terço",
+    "liturgical": "Litúrgicas"
+  },
+  "language": {
+    "label": "Idioma",
+    "la": "Latim",
+    "pt-BR": "Português",
+    "en": "Inglês",
+    "es": "Espanhol",
+    "it": "Italiano",
+    "latinBadge": "Lingua Latina"
+  },
+  "views": {
+    "bilingual": "Lado a lado",
+    "single": "Somente este idioma"
+  },
+  "actions": {
+    "play": "Ouvir oração",
+    "favorite": "Favoritar",
+    "share": "Compartilhar"
+  },
+  "empty": "Nenhuma oração encontrada com esses filtros."
+}

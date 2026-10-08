@@ -1,0 +1,109 @@
+/* ==========================================================
+   GLOBALS — Ora et Labora
+   Reset mínimo + utilitários base + tipografia semântica
+   ========================================================== */
+
+@import './tokens.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---- Base reset ---- */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+
+  /* Respeita preferência do usuário de não ter animações */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    @apply bg-ivory-50 text-graphite-800;
+    min-height: 100dvh;
+    overflow-x: hidden;
+  }
+
+  /* Foco visível acessível (WCAG AA) */
+  :focus-visible {
+    outline: 2px solid hsl(var(--color-gold));
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Tipografia semântica */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    @apply text-graphite-900;
+    line-height: 1.3;
+  }
+
+  /* Texto em Latim recebe hint de idioma para leitores de tela */
+  :lang(la) {
+    font-family: var(--font-serif);
+    font-style: italic;
+  }
+
+  /* Scrollbar sutil */
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-ivory-200 rounded-pill;
+  }
+
+  /* Seleção de texto */
+  ::selection {
+    background: hsl(var(--color-gold-light) / 0.35);
+    color: hsl(var(--color-graphite-900));
+  }
+}
+
+/* ---- Componentes utilitários (somente o que não tem equivalente Tailwind) ---- */
+@layer components {
+  /* Texto de oração — tipografia serifada confortável */
+  .prayer-text {
+    font-family: var(--font-serif);
+    font-size: 1.125rem;
+    line-height: 1.85;
+    @apply text-graphite-800;
+  }
+
+  /* Divisor decorativo sutil */
+  .divider-ornamental {
+    @apply flex items-center gap-3 text-graphite-400 text-xs uppercase tracking-widest;
+  }
+  .divider-ornamental::before,
+  .divider-ornamental::after {
+    content: '';
+    @apply flex-1 h-px bg-ivory-200;
+  }
+}

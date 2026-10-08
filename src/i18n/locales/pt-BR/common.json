@@ -1,0 +1,44 @@
+{
+  "nav": {
+    "today": "Hoje",
+    "prayers": "Orações",
+    "discover": "Descobrir",
+    "assistant": "Assistente",
+    "community": "Comunidade",
+    "profile": "Perfil"
+  },
+  "actions": {
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "delete": "Excluir",
+    "edit": "Editar",
+    "close": "Fechar",
+    "back": "Voltar",
+    "next": "Próximo",
+    "finish": "Concluir",
+    "add": "Adicionar",
+    "done": "Feito",
+    "retry": "Tentar novamente",
+    "share": "Compartilhar"
+  },
+  "states": {
+    "loading": "Carregando...",
+    "error": "Algo deu errado",
+    "empty": "Nenhum item encontrado",
+    "errorRetry": "Erro ao carregar. Toque para tentar novamente."
+  },
+  "theme": {
+    "light": "Claro",
+    "vigilia": "Vigília (Escuro)"
+  },
+  "accessibility": {
+    "menuOpen": "Abrir menu",
+    "menuClose": "Fechar menu",
+    "toggleTheme": "Alternar tema"
+  },
+  "app": {
+    "name": "Ora et Labora",
+    "tagline": "Oração e trabalho no ritmo da vida"
+  }
+}
